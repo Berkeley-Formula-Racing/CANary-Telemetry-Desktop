@@ -2,6 +2,7 @@
   import { def } from "@vue/shared";
   import IntroScreen from "./components/IntroScreen.vue";
   import AppScreen from "./components/AppScreen.vue"
+  import SetupScreen from "./components/SetupScreen.vue"
 
   import "bootstrap"
   import "bootstrap/dist/css/bootstrap.css"
@@ -14,6 +15,7 @@ export default {
       return {
         showIntro: true,
         showApp: false,
+        showSetup: false
       }
     },
     methods: {
@@ -21,15 +23,22 @@ export default {
         this.showIntro = showIntro
         console.log("Button Clicked")
         this.showApp = true
-      }
+      }, 
+      startSetup (showIntro) {
+      this.showIntro = showIntro
+      this.showSetup = true
     }
   }
+}
 </script>
 
 <template>
   <main>
     <div v-if="showIntro">
-      <IntroScreen @enterApp="startApp($event)" />
+      <IntroScreen @enterApp="startApp($event), startSetup($event)" />
+    </div>
+    <div v-if="showSetup">
+      <SetupScreen />
     </div>
     <div v-if="showApp">
       <AppScreen />

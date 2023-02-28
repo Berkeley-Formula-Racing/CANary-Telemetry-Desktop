@@ -40,6 +40,10 @@
   --section-gap: 160px;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: var(--vt-c-blue-bfr);

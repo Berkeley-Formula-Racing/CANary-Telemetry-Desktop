@@ -5,8 +5,8 @@ export default{
             AppName: 'CANary Desktop',
             TeamName: 'Berkeley Formula Racing',
             nameIndex: 0,
-            Names: ["CANary Telemetry", "Borkeley Formula Racing", "Forkeley Bormula Racing", "Gob Ears", "Electrical is the best!"],
-            isEntered: false,
+            Names: ["CANary Telemetry", "Borkeley Formula Racing","Student Driver", "Stolen Property", "Gob Ears", "Legally Liable"],
+            // isEntered: false,
         }
     },
     methods: {
@@ -21,6 +21,9 @@ export default{
         startApp() {
             this.isEntered = true
             console.log(this.isEntered)
+            this.$emit('enterApp', false)
+        },
+        startSetup() {
             this.$emit('enterApp', false)
         }
     }
@@ -42,6 +45,7 @@ export default{
     </p>
     
     <button type="button" @click="startApp" class="btn btn-primary">Start App</button>
+    <button type="button" @click="startSetup" class="btn btn-primary">Setup</button>
 </body>
 </template>
 
@@ -55,6 +59,10 @@ export default{
     align-content: center; /* Vertical */  
   }
   p {text-align: center;}
+}
+
+button {
+    margin: 10px;
 }
 
 </style>
