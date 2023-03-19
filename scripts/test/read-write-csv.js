@@ -2,14 +2,16 @@ const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const csvWriter = createCsvWriter({
   path: 'output.csv',
   header: [
-    { id: 'name', title: 'Name' },
-    { id: 'age', title: 'Age' },
+    { id: 'rpm', title: 'RPM' },
+    { id: 'voltage', title: 'Voltage' },
   ]
 });
 
 const data = [
-  { name: 'John Doe', age: 30 },
-  { name: 'Jane Smith', age: 25 },
+  { rpm: 2000,
+    voltage: 12.27 },
+  { rpm: 3000,
+    voltage: 11.88 },
 ];
 
 csvWriter.writeRecords(data)

@@ -1,8 +1,8 @@
 const fs = require("fs");
 
 const data = {
-  name: "John Doe",
-  age: 30
+  rpm: 2000,
+  voltage: 12.27
 };
 
 fs.writeFile("data.json", JSON.stringify(data), (err) => {
